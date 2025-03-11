@@ -1,0 +1,113 @@
+\n==============================================
+RHEL System Hardening Script - Demo Run
+==============================================\n
+Starting system hardening process...
+[Tue Mar 11 04:25:28 EDT 2025] Hardening process started
+\nChecking for system updates...
+System updated successfully
+[Tue Mar 11 04:25:29 EDT 2025] System updated successfully
+\nDisabling unused services...
+Disabled bluetooth service
+[Tue Mar 11 04:25:29 EDT 2025] Disabled bluetooth service
+Disabled telnet service
+[Tue Mar 11 04:25:30 EDT 2025] Disabled telnet service
+Disabled cups service
+[Tue Mar 11 04:25:30 EDT 2025] Disabled cups service
+Disabled avahi-daemon service
+[Tue Mar 11 04:25:30 EDT 2025] Disabled avahi-daemon service
+Disabled rpcbind service
+[Tue Mar 11 04:25:31 EDT 2025] Disabled rpcbind service
+Disabled nfs service
+[Tue Mar 11 04:25:31 EDT 2025] Disabled nfs service
+Disabled autofs service
+[Tue Mar 11 04:25:32 EDT 2025] Disabled autofs service
+\nConfiguring firewall...
+Started and enabled firewalld
+[Tue Mar 11 04:25:32 EDT 2025] Started and enabled firewalld
+Firewall configured successfully
+[Tue Mar 11 04:25:33 EDT 2025] Firewall configured successfully
+\nSecuring critical system files...
+Secured /etc/shadow (600)
+[Tue Mar 11 04:25:33 EDT 2025] Secured /etc/shadow (600)
+Secured /etc/passwd (644)
+[Tue Mar 11 04:25:34 EDT 2025] Secured /etc/passwd (644)
+Secured /etc/group (644)
+[Tue Mar 11 04:25:34 EDT 2025] Secured /etc/group (644)
+\nCreated backup of /etc/ssh/sshd_config
+[Tue Mar 11 04:25:35 EDT 2025] Created backup of /etc/ssh/sshd_config
+Secured /etc/ssh/sshd_config (600)
+[Tue Mar 11 04:25:35 EDT 2025] Secured /etc/ssh/sshd_config (600)
+Hardening SSH configuration...
+SSH configuration hardened and service restarted
+[Tue Mar 11 04:25:36 EDT 2025] SSH configuration hardened and service restarted
+\nConfiguring password policies...
+Created backup of /etc/pam.d/system-auth
+[Tue Mar 11 04:25:36 EDT 2025] Created backup of /etc/pam.d/system-auth
+Password policies configured
+[Tue Mar 11 04:25:37 EDT 2025] Password policies configured
+\nChecking for open ports...
+Open ports saved to open_ports.txt
+[Tue Mar 11 04:25:37 EDT 2025] Open ports saved to open_ports.txt
+Found 7 listening ports
+[Tue Mar 11 04:25:38 EDT 2025] Found 7 listening ports
+\nChecking for running processes...
+Running processes saved to running_processes.txt
+[Tue Mar 11 04:25:38 EDT 2025] Running processes saved to running_processes.txt
+\nDisabling core dumps...
+Core dumps disabled
+[Tue Mar 11 04:25:39 EDT 2025] Core dumps disabled
+\nHardening complete! Estimated 70% vulnerability reduction.
+Services disabled: bluetooth telnet cups avahi-daemon rpcbind nfs autofs
+Files secured: /etc/shadow, /etc/passwd, /etc/group, /etc/ssh/sshd_config
+Security enhancements:
+  - Firewall configured
+  - SSH hardened
+  - Password policies enforced
+  - System updated
+  - Core dumps disabled
+Open ports: 7 ports found and logged to open_ports.txt
+Running processes logged to running_processes.txt
+Logs saved to: hardening.log, hardening_errors.log (if errors occurred)
+\nDo you want to run tests to verify hardening measures? (y/n)
+y
+\nTesting hardening measures...\n
+[Tue Mar 11 04:25:42 EDT 2025] Testing hardening measures
+Test 1: Checking disabled services...
+✓ bluetooth is disabled
+✓ telnet is disabled
+✓ cups is disabled
+✓ avahi-daemon is disabled
+✓ rpcbind is disabled
+✓ nfs is disabled
+✓ autofs is disabled
+\nTest 2: Checking file permissions...
+✓ /etc/shadow has correct permissions (600)
+✓ /etc/passwd has correct permissions (644)
+✓ /etc/group has correct permissions (644)
+✓ /etc/ssh/sshd_config has correct permissions (600)
+\nTest 3: Checking SSH configuration...
+✓ SSH parameter PermitRootLogin is correctly set to no
+✓ SSH parameter PasswordAuthentication is correctly set to no
+✓ SSH parameter PermitEmptyPasswords is correctly set to no
+✓ SSH parameter Protocol is correctly set to 2
+✓ SSH parameter X11Forwarding is correctly set to no
+✓ SSH parameter MaxAuthTries is correctly set to 4
+✓ SSH parameter ClientAliveInterval is correctly set to 300
+✓ SSH parameter ClientAliveCountMax is correctly set to 0
+\nTest 4: Checking firewall status...
+✓ Firewalld is active
+✓ SSH service is allowed in firewall
+\nTest 5: Checking core dumps configuration...
+✓ Core dumps are disabled
+\nTest 6: Checking password policies...
+✓ Password policies are configured
+\nTest Summary:
+Tests passed: 19
+Tests failed: 0
+Total tests: 19
+[Tue Mar 11 04:25:50 EDT 2025] Testing completed - Passed: 19, Failed: 0
+\nAll tests passed! System hardening was successful.
+\n==============================================\n
+Demo completed! Output saved to hardening_demo_output.txt
+This file demonstrates how the hardening script would run on a real system.
+==============================================\n
